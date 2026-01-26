@@ -1,0 +1,7 @@
+tqdm
+scikit-video
+matplotlib
+google-measurement-protocol
+pycocoevalcap
+huggingface_hub[cli]
+boto3
