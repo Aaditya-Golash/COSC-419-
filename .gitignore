@@ -7,6 +7,8 @@ __pycache__/
 
 # Data and artifacts
 data/
+!src/data/
+!src/data/*.py
 datasets/
 *.ckpt
 *.pt
