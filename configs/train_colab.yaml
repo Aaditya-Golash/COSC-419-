@@ -1,0 +1,24 @@
+data:
+  root: /content/drive/MyDrive/SoccerNet/jersey-2023
+  num_frames: 8
+  image_size: 224
+  val_ratio: 0.2
+
+model:
+  backbone: resnet18
+  pretrained: true
+  num_classes: 101
+  dropout: 0.2
+
+train:
+  seed: 42
+  device: cuda
+  batch_size: 8
+  num_workers: 2
+  epochs: 8
+  lr: 0.0003
+  weight_decay: 0.0001
+  label_smoothing: 0.0
+
+output:
+  dir: /content/drive/MyDrive/COSC419_runs/group9_run1

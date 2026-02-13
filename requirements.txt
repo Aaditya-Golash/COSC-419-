@@ -1,0 +1,6 @@
+pyyaml
+tqdm
+numpy
+pillow
+scikit-learn
+pytest

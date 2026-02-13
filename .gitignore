@@ -1,0 +1,26 @@
+.venv/
+.venv_g9/
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Data and artifacts
+data/
+datasets/
+*.ckpt
+*.pt
+*.pth
+runs/
+logs/
+outputs/
+tmp_fake/
+SoccerNet/
+meeting_logs/
+
+# Notebook artifacts
+.ipynb_checkpoints/
+
+# OS/editor
+.DS_Store
+Thumbs.db

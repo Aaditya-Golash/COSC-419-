@@ -2,6 +2,48 @@
 
 Repository containing all necessary codes to get started on the SoccerNet Jersey Number Recognition challenge. 
 
+## Group 9 Quickstart (Kelowna Time Plan)
+
+### Local CPU sanity check (Vivobook)
+
+```powershell
+python -m venv .venv
+.\.venv\Scripts\Activate.ps1
+python -m pip install --upgrade pip
+pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cpu
+pip install -e ./soccernet-0.1.62/
+pip install -r requirements.txt
+python scripts/make_tiny_subset.py --data_root D:\SoccerNet\jersey-2023 --split train --num_clips 5 --out_dir .\data\tiny5
+python src/train_sanity.py --config configs/sanity.yaml
+```
+
+Or run both in one command (recommended for meeting demo):
+
+```powershell
+powershell -ExecutionPolicy Bypass -File scripts/meeting_demo.ps1 -DataRoot SoccerNet/jersey-2023
+```
+
+### Colab T4 full run
+
+```python
+from google.colab import drive
+drive.mount('/content/drive')
+```
+
+```bash
+git clone https://github.com/aaditya-golash/cosc-419-.git /content/COSC-419-
+cd /content/COSC-419-
+pip install -e ./soccernet-0.1.62/
+pip install -r requirements.txt
+python src/train_full.py --config configs/train_colab.yaml --data_root "/content/drive/MyDrive/SoccerNet/jersey-2023" --output_dir "/content/drive/MyDrive/COSC419_runs/group9_run1"
+```
+
+### Locked interfaces
+
+- Label mapping: `-1 -> 0`, `0..99 -> 1..100` (101 classes)
+- Dataset output tuple: `(clip_tensor, label_idx, tracklet_id)`
+- Sanity tensor shape: input `[B, T, 3, 224, 224]`, logits `[B, 101]`
+
 In this year's SoccerNet Jersey Number challenge, participants are given short video tracklets of soccer players and are asked to identify the jersey number of the player. This task can be useful for consumer applications as it helps to build systems that can accurately identify and recognize players in real-time during a soccer game. This information can be used to create interactive experiences for fans, such as player statistics, player tracking, and in-game analysis. Additionally, this technology can also be used in broadcast production to add player labels and enhance the viewing experience. By encouraging research on player recognition, the SoccerNet Jersey Number challenge contributes to the development of more engaging and informative consumer applications for soccer fans.
 
 ### 2023 Challenge Leaderboard
