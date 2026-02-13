@@ -2,7 +2,7 @@
 
 Repository containing all necessary codes to get started on the SoccerNet Jersey Number Recognition challenge. 
 
-## Group 9 Quickstart (Kelowna Time Plan)
+## Group 9 Quickstart 
 
 ### Local CPU sanity check (Vivobook)
 
